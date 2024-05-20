@@ -1,9 +1,9 @@
 
 class Note {
-  String id;
-  String title;
-  String content;
-  DateTime modifiedTime;
+  late String id;
+  late String title;
+  late String content;
+  late DateTime modifiedTime;
 
   Note({
     required this.id,
@@ -11,6 +11,19 @@ class Note {
     required this.content,
     required this.modifiedTime,
   });
+
+  Map<String, dynamic> toJsonMap() {
+    var dataMap = {"id": id, "title": title, "content": content, "modifiedTime": modifiedTime};
+    return dataMap;
+  }
+
+  Note.fromJsonMap(Map<String, dynamic> dataMap) {
+    id = dataMap['id'].toString() ?? "";
+    title = dataMap['title'] ?? "";
+    content = dataMap['content'] ?? "";
+    modifiedTime = dataMap['modifiedTime'] ?? "";
+
+  }
 
   Map<String, dynamic> toMap() {
     return {
