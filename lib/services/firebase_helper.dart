@@ -43,7 +43,7 @@ class FirebaseHelper {
 
   Future addnote(Note note) async {
     await _instance
-        .collection("sports8A1")
+        .collection(collectionName)
         .doc(note.id)
         .set(note.toJsonMap());
 

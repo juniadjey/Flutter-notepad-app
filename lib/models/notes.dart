@@ -1,22 +1,23 @@
 
 class Note {
+  // late keyword is used here to initialize them later
   late String id;
   late String title;
   late String content;
   late DateTime modifiedTime;
-
+// constructor and all the four fields are required
   Note({
     required this.id,
     required this.title,
     required this.content,
     required this.modifiedTime,
   });
-
+ // method to convert the data into jsonmap
   Map<String, dynamic> toJsonMap() {
     var dataMap = {"id": id, "title": title, "content": content, "modifiedTime": modifiedTime};
     return dataMap;
   }
-
+// method to get the data from jsonmap
   Note.fromJsonMap(Map<String, dynamic> dataMap) {
     id = dataMap['id'].toString() ?? "";
     title = dataMap['title'] ?? "";
