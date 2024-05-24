@@ -1,7 +1,7 @@
 
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_core/firebase_core.dart';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -79,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
     await FirebaseFirestore.instance.collection('notes').doc(id).delete();
     fetchNotes();
   }
-
+ // first 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -114,6 +114,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
+
+
+// search
             SizedBox(height: 20),
             TextField(
               onChanged: (value) {
@@ -139,6 +142,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
+
+
             SizedBox(height: 20),
             Expanded(
               child: ListView.builder(
@@ -207,6 +212,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                         ),
+
+
+
                         trailing: IconButton(
                           onPressed: () async {
                             final result = await confirmDialog(context);
@@ -227,6 +235,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+
+
+      
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           final result = await Navigator.push(

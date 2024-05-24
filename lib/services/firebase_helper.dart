@@ -41,32 +41,33 @@ class FirebaseHelper {
     return 1;
   }
 
-  Future addnote(Note note) async {
-    await _instance
-        .collection(collectionName)
-        .doc(note.id)
-        .set(note.toJsonMap());
+  // Future addnote(Note note) async {
+  //   await _instance
+  //       .collection(collectionName)
+  //       .doc(note.id)
+  //       .set(note.toJsonMap());
 
-    int counter = await _firebaseHelper.existingCounter();
+  //   int counter = await _firebaseHelper.existingCounter();
 
-    await _instance
-        .collection(collectionCounter)
-        .doc("counter")
-        .set({"value": counter + 1});
-  }
+  //   await _instance
+  //       .collection(collectionCounter)
+  //       .doc("counter")
+  //       .set({"value": counter + 1});
+  // }
 
-  Future deletenote(String key) async {
-    await _instance.collection(collectionName).doc(key).delete();
-  }
+  // Future deletenote(String key) async {
+  //   await _instance.collection(collectionName).doc(key).delete();
+  // }
 
-  Future<List<Note>> getAllData() async {
-    List<Note> allnotesData = [];
+  // Future<List<Note>> getAllData() async {
+  //   List<Note> allnotesData = [];
 
-    var collectionSnapshot = await _instance.collection(collectionName).get();
+  //   var collectionSnapshot = await _instance.collection(collectionName).get();
 
-    for (var doc in collectionSnapshot.docs) {
-      allnotesData.add(Note.fromJsonMap(doc.data()));
-    }
-    return allnotesData;
-  }
+  //   for (var doc in collectionSnapshot.docs) {
+  //     allnotesData.add(Note.fromJsonMap(doc.data()));
+  //   }
+  //   return allnotesData;
+  // }
+
 }

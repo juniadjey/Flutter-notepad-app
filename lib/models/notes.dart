@@ -12,19 +12,19 @@ class Note {
     required this.content,
     required this.modifiedTime,
   });
- // method to convert the data into jsonmap
-  Map<String, dynamic> toJsonMap() {
-    var dataMap = {"id": id, "title": title, "content": content, "modifiedTime": modifiedTime};
-    return dataMap;
-  }
-// method to get the data from jsonmap
-  Note.fromJsonMap(Map<String, dynamic> dataMap) {
-    id = dataMap['id'].toString() ?? "";
-    title = dataMap['title'] ?? "";
-    content = dataMap['content'] ?? "";
-    modifiedTime = dataMap['modifiedTime'] ?? "";
+//  // method to convert the data into jsonmap
+//   Map<String, dynamic> toJsonMap() {
+//     var dataMap = {"id": id, "title": title, "content": content, "modifiedTime": modifiedTime};
+//     return dataMap;
+//   }
+// // method to get the data from jsonmap
+//   Note.fromJsonMap(Map<String, dynamic> dataMap) {
+//     id = dataMap['id'].toString() ?? "";
+//     title = dataMap['title'] ?? "";
+//     content = dataMap['content'] ?? "";
+//     modifiedTime = dataMap['modifiedTime'] ?? "";
 
-  }
+//   }
 
   Map<String, dynamic> toMap() {
     return {
